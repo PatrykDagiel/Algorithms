@@ -7,12 +7,13 @@ import java.util.Random;
  */
 public class ApplicationRunner {
     public static void main(String[] args){
-        int[] dummy = new int[6];
+        int[] dummy = new int[12];
 //        InsertSort container = new InsertSort(dummy);
 //        BubbleSort container = new BubbleSort(dummy);
-        QuickSort container = new QuickSort(dummy);
+//        HeapSort container = new HeapSort(dummy);
+        MergeSort container = new MergeSort(dummy);
         container.arrayBeforePrint();
-        container.calculate(container.left , container.right);
+        container.mergeSort(0, container.tab.length-1);
         container.arrayAfterPrint();
     }
 }

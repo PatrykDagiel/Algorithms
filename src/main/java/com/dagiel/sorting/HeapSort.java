@@ -22,22 +22,20 @@ public class HeapSort {
         int i, j;
 
         i = tab[k-1];
-        while (i <= tab.length / 2) {
+        while (k <= n / 2) {
             j = 2 * k;
             if ((j < n) && (tab[j - 1] < tab[j])) j++;
             if (i >= tab[j - 1])
                 break;
             else {
-                int temp = tab[j - 1];
                 tab[k - 1] = tab[j - 1];
+                k = j;
             }
         tab[k-1] = i;
         }
     }
 
     public void heapsort(int n) {
-
-        arrayBeforePrint();
 
         int k, swap;
         for (k = n/2; k > 0; k--) restore(k, n);
@@ -49,7 +47,6 @@ public class HeapSort {
             restore(1, n);
         } while (n > 1);
 
-        arrayAfterPrint();
     }
 
     void arrayBeforePrint() {
