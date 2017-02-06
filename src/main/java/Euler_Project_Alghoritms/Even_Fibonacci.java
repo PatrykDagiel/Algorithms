@@ -22,7 +22,7 @@ public class Even_Fibonacci {
     int how_many_numbers() {
         int i = 0;
         long checker = 0;
-        while (checker <= 4000000){
+        while (checker <= size){
             checker = fibonacci(i);
             i++;
         }
@@ -30,7 +30,8 @@ public class Even_Fibonacci {
     }
 
     void calculate() {
-        for (int i = 0; i <= how_many_numbers(); i++) {
+        int z = how_many_numbers();
+        for (int i = 0; i <= z; i++) {
             long temporary = fibonacci(i);
             System.out.println("Temporary to: " + temporary + "\n");
             if (temporary % 2 == 0) even_sum += temporary;
@@ -38,7 +39,7 @@ public class Even_Fibonacci {
     }
 
     public static void main(String[] args){
-        Even_Fibonacci container = new Even_Fibonacci(33);
+        Even_Fibonacci container = new Even_Fibonacci(4000000);
         container.calculate();
         System.out.println("Wynik to: " + container.even_sum);
     }
