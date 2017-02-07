@@ -22,7 +22,7 @@ public class Prime_10001th {
     }
 
     private void calculate() {
-        for (long i = 2;  ; i++) {
+        for (long i = 3;  ; i += 2) {
             if(is_Prime((int)i)) {
                 size--;
                 if(size == 0) {
