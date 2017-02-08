@@ -10,21 +10,21 @@ public class Largest_Prime_Factor {
         size = x;
     }
 
-    boolean is_Prime(int x){
-        boolean answer = true;
-        for(int dividing = 2; dividing < x; dividing++)
-            if(x % dividing == 0) {
-                answer = false;
-                break;
-            }
-        return answer;
+    static boolean isPrime(int n) {
+        if (n%2==0) return false;
+        for(int i = 3; i*i <= n ; i += 2) {
+            if(n%i==0)
+                return false;
+        }
+        return true;
     }
+
 
 
     long lowest_dividing_prime(long x) {
 
         for (int position = 2; position < x; position++) {
-            if ((is_Prime(position)) && ((x % position) == 0)) {
+            if ((isPrime(position)) && ((x % position) == 0)) {
                     return position;
             } else continue;
         } return x;

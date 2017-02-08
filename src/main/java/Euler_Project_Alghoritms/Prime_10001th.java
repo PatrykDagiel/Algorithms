@@ -11,19 +11,19 @@ public class Prime_10001th {
         size = x;
     }
 
-    boolean is_Prime(int x){
-        boolean answer = true;
-        for(int dividing = 2; dividing < x; dividing++)
-            if(x % dividing == 0) {
-                answer = false;
-                break;
+    static boolean isPrime(int n) {
+        if (n%2==0) return false;
+        for(int i = 3; i*i <= n ; i += 2) {
+            if(n%i==0)
+                return false;
         }
-        return answer;
+        return true;
     }
+
 
     private void calculate() {
         for (long i = 3;  ; i += 2) {
-            if(is_Prime((int)i)) {
+            if(isPrime((int)i)) {
                 size--;
                 if(size == 0) {
                     System.out.print("Prime number seeked is " + i);

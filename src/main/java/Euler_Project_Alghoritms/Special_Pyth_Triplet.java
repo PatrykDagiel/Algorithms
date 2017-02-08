@@ -23,7 +23,7 @@ public class Special_Pyth_Triplet {
     }
 
     private void calculate() {
-            for (c = 3 ; c <= value; c++)
+            for (c = 3 ; c <= value - c; c++)
                 for (b = 2 ; b < c ; b++)
                     for (a = 1; a < b ; a++ ) {
                         if (sum() && sqrt()) {
