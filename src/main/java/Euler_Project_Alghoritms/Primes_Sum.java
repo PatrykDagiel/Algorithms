@@ -28,7 +28,8 @@ public class Primes_Sum {
     }
 
     public static void main(String[] args) {
-        accumlatePrimeNum(2000000);
+        Primes_Sum container = new Primes_Sum();
+        container.accumlatePrimeNum(2000000);
     }
 
 }
