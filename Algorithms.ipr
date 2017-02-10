@@ -18,9 +18,9 @@
         <processorPath useClasspath="true" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Algorithms_main" target="1.5" />
-      <module name="Algorithms_test" target="1.5" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="Algorithms_main" target="1.8" />
+      <module name="Algorithms_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="CopyrightManager" default="" />
@@ -55,6 +55,15 @@
         </option>
       </GradleProjectSettings>
     </option>
+  </component>
+  <component name="InspectionProjectProfileManager">
+    <profile version="1.0">
+      <option name="myName" value="Project Default" />
+      <inspection_tool class="Since15" enabled="false" level="ERROR" enabled_by_default="false" />
+    </profile>
+    <option name="PROJECT_PROFILE" value="Project Default" />
+    <option name="USE_PROJECT_PROFILE" value="true" />
+    <version value="1.0" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
