@@ -11,7 +11,7 @@ import java.util.stream.Stream;
  */
 public class ProjectEuler18 {
     public static void main(String[] args) throws Exception {
-        int[][] array = Files.lines(Paths.get("C:\\Users\\dagiel\\Documents\\GithubPrywatny\\Algorithms\\src\\rsc\\triangle.txt"))
+        int[][] array = Files.lines(Paths.get("src/rsc/triangle.txt"))
                 .map((l) -> l.trim().split("\\s+"))
                 .map((sa) -> Stream.of(sa).mapToInt(Integer::parseInt).toArray())
                 .toArray(int[][]::new);

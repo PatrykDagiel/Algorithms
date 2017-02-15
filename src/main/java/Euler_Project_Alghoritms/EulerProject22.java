@@ -19,7 +19,7 @@ public class EulerProject22 {
     static long sum = 0;
 
     static void read_it(){
-        try (Stream<String> lines = Files.lines(Paths.get("C:\\Users\\dagiel\\Documents\\GithubPrywatny\\Algorithms\\src\\rsc\\names.txt"))) {
+        try (Stream<String> lines = Files.lines(Paths.get("src/rsc/names.txt"))) {
         list = lines.collect(Collectors.toList());
         } catch (IOException e) {
 
