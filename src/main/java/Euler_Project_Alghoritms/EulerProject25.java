@@ -1,29 +1,30 @@
 package Euler_Project_Alghoritms;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
 
 /**
  * Created by dagiel on 16/02/2017.
  */
 public class EulerProject25 {
         void calculate() {
-            BigInteger sum = new BigInteger("0");
-            BigInteger previous = new BigInteger("1");
-            BigInteger previous2 = new BigInteger("1");
-            long index = 2;
-
-            byte[] array = sum.toByteArray();
-
-            while (array.length < 4000) {
-                sum = new BigInteger("0");
-                sum = sum.add(previous);
-                sum = sum.add(previous2);
-                index++;
-                previous2 = new BigInteger("0").add(previous);
-                previous = new BigInteger("0").add(sum);
-                array = sum.toByteArray();
+            ArrayList<BigInteger> lista = new ArrayList<BigInteger>();
+            boolean limitreached = true;
+            int indeks = 2;
+            BigInteger nextnum = null;
+            lista.add(BigInteger.valueOf(1));
+            lista.add(BigInteger.valueOf(1));
+            while (limitreached == true) {
+                nextnum = lista.get(indeks-1).add(lista.get(indeks-2));
+                lista.add(nextnum);
+                indeks++;
+                if(nextnum.toString().length() >= 1000) {       // jako String!
+                    limitreached = false;
+                }
             }
-            System.out.println("Indeks " + index);
+            Long stop = System.nanoTime();
+            System.out.println("1,000 digits: " + lista.size());
+
         }
 
         public static void main(String[] args) {
