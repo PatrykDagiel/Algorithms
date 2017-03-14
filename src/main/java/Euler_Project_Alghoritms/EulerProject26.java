@@ -2,6 +2,9 @@ package Euler_Project_Alghoritms;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 
 /**
  * Created by dagiel on 17/02/2017.
@@ -10,33 +13,35 @@ public class EulerProject26 {
 
     EulerProject26() {}
 
-    static boolean isPrime(BigDecimal n) {
-        if ( n.longValue() % 2 == 0 ) return false;
-        for(int i = 3; i*i <= n.longValue() ; i += 2) {
-            if( n.longValue()%i == 0 )
-                return false;
+    public String calculate() {
+        int longest = 0;
+        int highest_length = 0;
+        for (int i = 1; i <= 1000; i++) {
+            int len = getRecLength(i);
+            if(len > highest_length) {
+                longest = i;
+                highest_length = len;
+            }
         }
-        return true;
+        return Integer.toString(longest);
     }
 
-    static boolean isPrime(double n) {
-        if ( n % 2 == 0 ) return false;
-        for(int i = 3; i*i <= n ; i += 2) {
-            if( n % i == 0 )
-                return false;
+    private int getRecLength(int i) {
+        Map<Integer, Integer> digits = new HashMap<Integer, Integer>();
+        int state = 1;
+        int iterator = 0;
+        while(!digits.containsKey(state)) {
+            digits.put(state, iterator);
+            state = state * 10 % i;
+            iterator++;
         }
-        return true;
+        return iterator - digits.get(state);
     }
 
 
     public static void main(String[] args) {
-        ArrayList<BigDecimal> lista = new ArrayList<BigDecimal>();
-        BigDecimal addition = new BigDecimal(1);
-        for (int i = 1; i <= 1000; i++){
-                lista.add(i);
-            }
-        System.out.println(String.format(lista.toString()));
-        System.out.println(lista.size());
+        EulerProject26 container = new EulerProject26();
+        System.out.print(container.calculate());
     }
 
 }
